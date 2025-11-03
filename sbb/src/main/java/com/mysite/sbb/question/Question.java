@@ -4,7 +4,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.mysite.sbb.answer.Answer;
-
+import java.util.Set;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.CascadeType; 
 import jakarta.persistence.Column; 
 import jakarta.persistence.Entity; 
@@ -41,4 +42,7 @@ public class Question {
     private SiteUser author;
 
     private LocalDateTime modifyDate;
+
+    @ManyToMany
+    Set<SiteUser> voter;
 }
